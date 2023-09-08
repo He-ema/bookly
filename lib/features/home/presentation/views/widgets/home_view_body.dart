@@ -1,6 +1,7 @@
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'custom_app_bar.dart';
 import 'featured_list_view.dart';
@@ -19,11 +20,14 @@ class HomeViewBody extends StatelessWidget {
           height: 50,
         ),
         Padding(
-          padding: EdgeInsets.only(left: 24),
+          padding: EdgeInsets.symmetric(horizontal: 30),
           child: Text(
             'Best seller',
             style: Styles.textStyle18,
           ),
+        ),
+        SizedBox(
+          height: 20,
         ),
         BestSelllerLestViewItem(),
       ],
@@ -54,8 +58,23 @@ class BestSelllerLestViewItem extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            width: 30,
+          ),
           Column(
-            children: [],
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text(
+                  'Harry potter and the golbet of fire',
+                  style: GoogleFonts.arvo(
+                    textStyle: Styles.textStyle20,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              )
+            ],
           )
         ],
       ),
