@@ -1,10 +1,12 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/core/widgets/custom_button.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'book_details_custom_app_bar.dart';
+import 'books_action.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -15,20 +17,20 @@ class BookDetailsViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: [
-          BookDetailsCustomAppBar(),
+          const BookDetailsCustomAppBar(),
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.20),
-            child: CustomBookImage(),
+            child: const CustomBookImage(),
           ),
-          SizedBox(
+          const SizedBox(
             height: 43,
           ),
           Text(
             'The Jungle Book',
             style: GoogleFonts.arvo(textStyle: Styles.textStyle30),
           ),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           Text(
@@ -36,15 +38,19 @@ class BookDetailsViewBody extends StatelessWidget {
             style: Styles.textStyle18.copyWith(
               color: Colors.white.withOpacity(0.7),
               fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 18,
           ),
-          BookRating(
+          const BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
           ),
+          SizedBox(
+            height: 37,
+          ),
+          const BooksAction(),
         ],
       ),
     );
