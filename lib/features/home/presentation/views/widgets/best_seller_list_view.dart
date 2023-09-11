@@ -12,8 +12,8 @@ class BestSellerListView extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemCount: 10,
       itemBuilder: (context, index) => Padding(
-        padding: const EdgeInsets.only(bottom: 20),
-        child: BestSelllerLestViewItem(),
+        padding: const EdgeInsets.only(bottom: 20, right: 30, left: 30),
+        child: BookListViewItem(),
       ),
     );
   }
