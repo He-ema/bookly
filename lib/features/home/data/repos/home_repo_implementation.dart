@@ -13,8 +13,8 @@ class HomeRepoImplementation implements HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
-      var data =
-          await apiService.get(endPoints: 'volumes?q=subject: programming');
+      var data = await apiService.get(
+          endPoints: 'volumes?q=subject: computer science');
 
       List<BookModel> books = [];
 
