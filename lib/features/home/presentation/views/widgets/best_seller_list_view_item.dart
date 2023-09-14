@@ -1,3 +1,4 @@
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -5,11 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../data/models/book_model/book_model.dart';
 import 'book_rating.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
-
+  const BookListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,20 +22,9 @@ class BookListViewItem extends StatelessWidget {
         height: 150,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 2.7 / 4,
-              child: Container(
-                // height: MediaQuery.of(context).size.height * 0.3,
-                // width: MediaQuery.of(context).size.width * 0.4,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.testImage),
-                  ),
-                ),
-              ),
-            ),
+            CustomBookImage(
+                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                    'http://books.google.com/books/content?id=OJwXEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'),
             SizedBox(
               width: 30,
             ),
@@ -44,7 +35,7 @@ class BookListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      'Harry potter and the golbet of fire',
+                      bookModel.volumeInfo!.title!,
                       style: GoogleFonts.arvo(
                         textStyle: Styles.textStyle20,
                       ),
@@ -54,7 +45,7 @@ class BookListViewItem extends StatelessWidget {
                   ),
                   SizedBox(height: 3),
                   Text(
-                    'J.K. Rowling',
+                    bookModel.volumeInfo!.authors![0],
                     style: Styles.textStyle14,
                   ),
                   SizedBox(
@@ -63,7 +54,7 @@ class BookListViewItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        '19.99',
+                        'Free',
                         style: Styles.textStyle20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
