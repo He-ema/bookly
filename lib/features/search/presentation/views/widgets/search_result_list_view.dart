@@ -10,6 +10,7 @@ class SearchResultListView extends StatelessWidget {
       //  physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       itemCount: 10,
+      // ignore: prefer_const_constructors
       itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.only(bottom: 20),
         //child: BookListViewItem(),

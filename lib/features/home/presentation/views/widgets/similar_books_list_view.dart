@@ -20,7 +20,7 @@ class SimilarBooksListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: CustomBookImage(
                     imageUrl: state
                             .books[index].volumeInfo?.imageLinks?.thumbnail ??
@@ -31,7 +31,7 @@ class SimilarBooksListView extends StatelessWidget {
         } else if (state is SimilarBooksCubitFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return CustomLoadingWidget();
+          return const CustomLoadingWidget();
         }
       },
     );

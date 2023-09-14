@@ -23,7 +23,7 @@ class FeaturedBoxListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: GestureDetector(
                   onTap: () {
                     GoRouter.of(context)
@@ -40,7 +40,7 @@ class FeaturedBoxListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return CustomLoadingWidget();
+          return const CustomLoadingWidget();
         }
       },
     );

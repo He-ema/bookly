@@ -25,7 +25,7 @@ class BookListViewItem extends StatelessWidget {
             CustomBookImage(
                 imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
                     'http://books.google.com/books/content?id=OJwXEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'),
-            SizedBox(
+            const SizedBox(
               width: 30,
             ),
             Expanded(
@@ -43,12 +43,12 @@ class BookListViewItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Text(
                     bookModel.volumeInfo!.authors![0],
                     style: Styles.textStyle14,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 3,
                   ),
                   Row(
@@ -58,8 +58,8 @@ class BookListViewItem extends StatelessWidget {
                         style: Styles.textStyle20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      BookRating(),
+                      const Spacer(),
+                      const BookRating(),
                     ],
                   ),
                 ],

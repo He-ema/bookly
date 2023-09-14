@@ -15,11 +15,11 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => SplashView(),
+        builder: (context, state) => const SplashView(),
       ),
       GoRoute(
         path: '/homeView',
-        builder: (context, state) => HomeView(),
+        builder: (context, state) => const HomeView(),
       ),
       GoRoute(
         path: '/bookDetailsView',
@@ -32,7 +32,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: '/SearchView',
-        builder: (context, state) => SearchView(),
+        builder: (context, state) => const SearchView(),
       ),
     ],
   );
